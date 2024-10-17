@@ -15,7 +15,6 @@ export async function saveSetting(lang: LanguageFormValues) {
 export async function getSetting(): Promise<LanguageFormValues> {
   const firstLang = await LocalStorage.getItem<string>("firstLang");
   const secondLang = await LocalStorage.getItem<string>("secondLang");
-  console.log("get settings:", { firstLang, secondLang });
   return { firstLang: firstLang || "en", secondLang: secondLang || "th" };
 }
 
